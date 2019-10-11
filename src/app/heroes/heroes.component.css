@@ -5,7 +5,6 @@
     list-style-type: none;
     padding: 0;
     width: 15em;
-
 }
 
 .heroes li{
@@ -17,7 +16,6 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
-
 }
 
 .heroes li:hover {
@@ -36,7 +34,7 @@
     color: white;
 }
 
-  .heroes .badge {
+.heroes .badge {
     display: inline-block;
     font-size: small;
     color: white;

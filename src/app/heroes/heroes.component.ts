@@ -8,9 +8,10 @@ import { HEROES, Hero } from '../Hero';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes = HEROES;
+  heroes;
   selectedHero: Hero;
-  onSelect = (hero: Hero) => {
+
+  onSelect = (hero: Hero): void => {
     this.selectedHero = hero;
     console.log('selected', this.selectedHero.name);
   }
@@ -19,6 +20,7 @@ export class HeroesComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.heroes= HEROES;
   }
 
 }
