@@ -23,7 +23,7 @@ button {
     cursor: hand;
 }
 
-button: :hover{
+button:hover{
     background-color: #cfd8dc;
 }
 
