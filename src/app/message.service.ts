@@ -11,6 +11,7 @@ export class MessageService {
 
   add = (message: String):void => {
     this.messages.push(message)
+    
   }
 
   clear = () => {
