@@ -10,8 +10,8 @@ jobs:
           key: my-project-{{ .Branch }}-{{ checksum "package-lock.json"}}
       - run: npm install
       - save_cache: 
-        key: my-project - {{ .Branch }}-{{ checksum "package-lock.json"}}
-        paths:
-          - "node-modules"
+          key: my-project - {{ .Branch }}-{{ checksum "package-lock.json"}}
+          paths:
+            - "node-modules"
       - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCi
       - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
