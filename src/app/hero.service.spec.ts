@@ -2,8 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { async } from 'q';
 import { of } from 'rxjs';
 
 const expectedHeroes =  [
@@ -54,5 +52,16 @@ describe('HeroService', () => {
 
     expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
   });
+
+  it('should return the first hero', () => {
+    const expectedHero = expectedHeroes[0];
+    httpClientSpy.get.and.returnValue(of(expectedHeroes[0]));
+    service.getHero(11).subscribe(
+      hero => expect(hero).toEqual(expectedHero, 'expected hero'), fail
+    );
+    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
+  });
+
+
 
 });
