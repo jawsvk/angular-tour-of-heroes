@@ -25,10 +25,19 @@ describe('LightSwitchComponentComponent', () => {
   });
 
   it('#clicked() should toggle #isOn', () => {
-    expect(component.isOn).toBe(false);
+    expect(component.isOn).toBe(false, 'off at first');
     component.clicked();
-    expect(component.isOn).toBe(true);
+    expect(component.isOn).toBe(true,'on after click');
     component.clicked();
-    expect(component.isOn).toBe(false);
+    expect(component.isOn).toBe(false,'off after second click');
   });
+
+  it('#clicked() should set #message to "is On"', () => {
+    expect(component.message).toMatch(/is Off/i, 'off at first');
+    component.clicked();
+    expect(component.message).toMatch(/is On/i, 'on after clicked');
+    component.clicked();
+  });
+
+  
 });
