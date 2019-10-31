@@ -24,4 +24,10 @@ describe('HeroSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain searchbar label "Hero Search"', () => {
+    const searchBarElement: HTMLElement = fixture.nativeElement;
+    const label = searchBarElement.querySelector('label');
+    expect(label.textContent).toEqual('Hero Search');
+  });
 });
